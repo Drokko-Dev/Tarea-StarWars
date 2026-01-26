@@ -1,0 +1,217 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #f6f7f85b;
+  background-color: var(--bg);
+  h1 {
+    padding: 10px 0px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke: 2px white;
+  }
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--bg) 8%,
+    var(--bg) 92%,
+    transparent 100%
+  );
+  .categories {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    h2 {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 3rem;
+      font-weight: 400;
+      -webkit-text-fill-color: black;
+      -webkit-text-stroke: 1px white;
+    }
+  }
+}
+.categories .category .details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  article {
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.411);
+    padding: 10px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 200px;
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px 12px 0px 0px;
+      object-fit: cover;
+    }
+    .like-btn {
+      svg {
+        position: absolute;
+        top: 12px;
+        right: 13px;
+        color: red;
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.category-content {
+  background-color: rgb(26, 26, 26);
+  border-radius: 0px 0px 12px 12px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.5rem;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke: 1px #fade4b;
+  }
+  p {
+    color: rgba(255, 255, 255, 0.849);
+  }
+}
+
+.container {
+  .menu-categories {
+    width: 60%;
+    margin: 0 auto;
+    gap: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    /* .options {
+      letter-spacing: 1px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.6rem;
+      -webkit-text-fill-color: black;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.932);
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      &:hover &:active {
+        color: #ffffff;
+        border-bottom: 2px solid #fade4b;
+      }
+    } */
+    .options {
+      letter-spacing: 1px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.6rem;
+      -webkit-text-fill-color: black;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.932);
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #fade4b;
+        transition: width 0.3s ease;
+      }
+      &:hover {
+        -webkit-text-stroke: 1px #fade4b;
+        &::after {
+          width: 100%;
+        }
+      }
+      &:active {
+        &::after {
+          background-color: #fade4b;
+        }
+      }
+    }
+  }
+}
+
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  gap: 20px;
+  height: 75vh;
+}
+
+.saber-loader {
+  width: 300px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.saber-loader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #fade4b;
+  box-shadow:
+    0 0 15px #fade4b,
+    0 0 30px #fade4b;
+  animation: saberCharge 2s infinite ease-in-out;
+}
+
+.loading-hologram {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.4rem;
+  color: #4da6ff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  animation: hologramFlicker 2s infinite;
+  text-shadow: 0 0 8px rgba(77, 166, 255, 0.6);
+}
+
+@keyframes saberCharge {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes hologramFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  52% {
+    opacity: 0.9;
+  }
+  54% {
+    opacity: 0.2;
+  }
+}

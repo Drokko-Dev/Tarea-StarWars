@@ -1,0 +1,23 @@
+:root {
+  --primaryOld: #2b8cee;
+  --primary: #f6f7f8;
+  --border: rgba(43, 140, 238, 0.4);
+  --shadow: rgba(43, 140, 238, 0.3);
+  --bg: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url(/public/3d-hyperspace-background-with-warp-tunnel-effect.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+
+  color: var(--border);
+}
