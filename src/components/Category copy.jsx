@@ -41,18 +41,40 @@ export function Category(props) {
           <button
             className="like-btn"
             onClick={() => {
-              let key = `${page}-${detail.uid}`;
-              let favoriteCopy = { ...favorite };
-              if (favoriteCopy[key]) {
-                delete favoriteCopy[key];
-                setFavorite(favoriteCopy);
+              setLike(!like);
+              let favoriteCopy = [...favorite];
+              let newFavorite = favoriteCopy.filter((card) => {
+                return card[0] === page && card[1] === detail.uid;
+              });
+              console.log(newFavorite);
+
+              if (newFavorite.length === 0) {
+                console.log("true");
+
+                favoriteCopy.push([page, detail.uid, detail.name]);
               } else {
-                favoriteCopy[key] = [page, detail.uid, detail.name];
-                setFavorite(favoriteCopy);
+                console.log("false");
+                favoriteCopy = favoriteCopy.filter((card) => {
+                  if (card[0] === page) {
+                    return card[1] === detail.uid ? false : true;
+                  } else {
+                    return true;
+                  }
+                });
               }
+              setFavorite(favoriteCopy);
+              console.log(favoriteCopy);
+
+              console.log("termine");
             }}
           >
-            {favorite[`${page}-${detail.uid}`] ? (
+            {favorite.filter((card) => {
+              if (card[0] === page) {
+                return card[1] === detail.uid ? true : false;
+              } else {
+                return false;
+              }
+            }) === 0 ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}
