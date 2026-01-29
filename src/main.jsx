@@ -4,6 +4,7 @@ import { MenuProvider } from "./hooks/useGlobalMenu.jsx";
 import { FavoriteProvider } from "./hooks/useGlobalFavorite.jsx";
 import "./index.css";
 import App from "./App.jsx";
+import "./styles/sidebar.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

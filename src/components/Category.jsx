@@ -48,6 +48,8 @@ export function Category(props) {
                 setFavorite(favoriteCopy);
               } else {
                 favoriteCopy[key] = [page, detail.uid, detail.name];
+                console.log(favoriteCopy);
+
                 setFavorite(favoriteCopy);
               }
             }}
